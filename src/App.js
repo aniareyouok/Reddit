@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from "react";
+import axios from "axios";
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+  const [posts, setPosts] = useState([]);
+
+  useEffect(()=> {
+
+    async function fetchReddit() {
+      try {
+        const result = await axios.get('https://www.reddit.com/hot.json?limit=15')
+        console.log(result.data.data.children)
+        setPosts(result.data.data.children)
+      } catch (e) {
+        console.error(e)
+      }
+
+    }
+
+    fetchReddit();
+  }, [])
+
+  return (
+      <div>
+        <h1>Dit is de homepagina</h1>
+          {posts.map((post)=>{
+          return <div>{post.data.title}</div>
+          })}
+      </div>
+  )
+}
 export default App;
