@@ -2,19 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import HomePage from "./pages/HomePage/HomePage";
 import PostPage from "./pages/PostPage/PostPage"
 
 ReactDOM.render(
-    <BrowserRouter>
+    <Router>
         <Routes>
         <Route path="/" element={<App />} />
             <Route path="home" element={<HomePage />} />
             <Route path="post" element={<PostPage />} />
         </Routes>
-    </BrowserRouter>,
+    </Router>,
   document.getElementById('root')
 );
 

@@ -9,6 +9,7 @@ function App() {
       <div className="wrapper">
         <h1>De Reddit App</h1>
         <nav>
+            <Link to="/">Reddit App</Link>
             <Link to="/home">Home Page </Link>
             <Link to="/post">Post Page </Link>
         </nav>

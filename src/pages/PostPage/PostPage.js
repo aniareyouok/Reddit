@@ -9,7 +9,8 @@ function PostPage() {
 
         async function fetchPost() {
             try {
-                const result = await axios.get('https://www.reddit.com/')
+
+                const result = await axios.get(`https://www.reddit.com/`)
                 console.log(result.data.data.children)
                 setPosts(result.data.data.children)
             } catch (e) {
@@ -30,4 +31,5 @@ function PostPage() {
         </div>
     )
 }
+
 export default PostPage;

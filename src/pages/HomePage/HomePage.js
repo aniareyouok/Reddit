@@ -31,11 +31,12 @@ function HomePage() {
         <div>
             <h1>Hottest 15 posts on Reddit</h1>
             {posts.map((post)=>{
-                let link = "https://www.reddit.com/" + post.data.subreddit_name_prefixed + "/about.json";
+                let aboutLink = "https://www.reddit.com/" + post.data.subreddit_name_prefixed + "/about.json";
+                let postLink = "https://www.reddit.com/" + post.data.permalink;
                 return (
                 <div>
-                    <h3>{post.data.title}</h3>
-                    <p><Link to={link}>{post.data.subreddit_name_prefixed}</Link> | {post.data.num_comments} comments - {post.data.ups} ups</p>
+                    <h3><a href={ postLink }>{post.data.title}</a></h3>
+                    <p><Link to={aboutLink}>{post.data.subreddit_name_prefixed}</Link> | {post.data.num_comments} comments - {post.data.ups} ups</p>
                 </div>
                 )
             })}
