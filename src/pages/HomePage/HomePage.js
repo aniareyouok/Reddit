@@ -5,6 +5,7 @@
 
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 function HomePage() {
 
@@ -28,9 +29,14 @@ function HomePage() {
 
     return (
         <div>
-            <h1>Dit is de homepagina</h1>
+            <h1>Hottest 15 posts on Reddit</h1>
             {posts.map((post)=>{
-                return <div>{post.data.title}</div>
+                return (
+                <div>
+                    <h3>{post.data.title}</h3>
+                    <p><Link to="">r/{post.data.subreddit}</Link> | {post.data.num_comments} comments - {post.data.ups} ups</p>
+                </div>
+                )
             })}
         </div>
     )

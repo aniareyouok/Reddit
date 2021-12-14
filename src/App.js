@@ -1,7 +1,5 @@
-import React, {useEffect, useState} from "react";
-import axios from "axios";
+import React from "react";
 import './App.css'
-import HomePage from "./pages/HomePage/HomePage";
 import { Link } from 'react-router-dom'
 
 function App() {
