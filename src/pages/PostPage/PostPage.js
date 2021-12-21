@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import HeaderNav from '../../components/HeaderNav'
 
 function PostPage() {
 
@@ -23,12 +24,15 @@ function PostPage() {
     }, [])
 
     return (
-        <div>
-            <h1>Dit is de Post Pagina</h1>
+        <>
+        <HeaderNav />
+        <div className="wrapper">
+            <h2>Dit is de Post Pagina</h2>
             {posts.map((post)=>{
                 return <div>{post.data.title}</div>
             })}
         </div>
+        </>
     )
 }
 

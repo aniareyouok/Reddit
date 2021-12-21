@@ -1,19 +1,17 @@
 import React from "react";
 import './App.css'
 import { Link } from 'react-router-dom'
+import HeaderNav from './components/HeaderNav'
+import Hero from './assets/reddit_hero.png'
 
 function App() {
 
 
   return (
-      <div className="wrapper">
-        <h1>De Reddit App</h1>
-        <nav>
-            <Link to="/">Reddit App</Link>
-            <Link to="/home">Home Page </Link>
-            <Link to="/post">Post Page </Link>
-        </nav>
-      </div>
+      <>
+          <HeaderNav />
+          <img src={Hero} alt="" />
+      </>
   )
 }
 export default App;
